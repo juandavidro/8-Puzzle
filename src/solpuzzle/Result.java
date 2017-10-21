@@ -28,7 +28,7 @@ public class Result{
 		int[][] auxp = copiar(_state.getBoardState());
 		
 		if ( _action.getCode().equals("UP")) {
-			//System.out.println("UP");
+			System.out.println("UP");
 			int aux = auxp[pos.getX()-1][pos.getY()];
 			auxp[pos.getX()-1][pos.getY()] = auxp[pos.getX()][pos.getY()];
 			auxp[pos.getX()][pos.getY()] = aux;

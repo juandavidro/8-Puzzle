@@ -38,7 +38,7 @@ public class State {
 		return pza;
 	}
 	
-	public int getCurrentState() {
+	public String getCurrentState() {
 		String a = "";
 		String c = "";
 		if(boardState != null) {		
@@ -48,10 +48,10 @@ public class State {
 					a += c;
 				}
 			}
-			int b = Integer.parseInt(a);
-			return b;
+			//int b = Integer.parseInt(a);
+			return a;
 		}else{
-			return -1;
+			return null;
 		}
 	}
 	

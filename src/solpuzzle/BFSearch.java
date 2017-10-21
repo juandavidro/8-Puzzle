@@ -11,8 +11,8 @@ public class BFSearch {
 	
 	private Problem problem;
 	private Queue<Node> fronteir;
-	private Set<Integer> sFront;
-	private Set<Integer> explored;
+	private Set<Node> sFront;
+	private Set<Node> explored;
 	private Node initNode;
 	
 	public BFSearch(Problem _problem) {
@@ -33,11 +33,11 @@ public class BFSearch {
 		}
 		
 		fronteir.add(initNode);
-		sFront.add(initNode.getState().getCurrentState());
+		sFront.add(initNode);
 		while(!fronteir.isEmpty()) {
 			
 			Node current = fronteir.poll();
-			explored.add(current.getState().getCurrentState());
+			explored.add(current);
 			ArrayList<Action> _actions = problem.get_Actions(current.getState());
 			for (Action action : _actions) {
 				child = new ChildNode(problem, current, action);
@@ -49,7 +49,7 @@ public class BFSearch {
 							return newCh;
 						}
 						fronteir.add(newCh);
-						sFront.add(newCh.getState().getCurrentState());
+						sFront.add(newCh);
 					}					
 				}
 			}

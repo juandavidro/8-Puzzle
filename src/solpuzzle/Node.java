@@ -90,8 +90,34 @@ public class Node implements Comparable<Node> {
 		}
 		
 		@Override
+		public int hashCode() {
+			String act;
+			if(this.getAction()==null)act = "Null";
+			else act = this.getAction().getCode();
+			String stat = this.getState().getCurrentState();
+			
+			if(act.equals("UP")) act = "1";
+			else if(act.equals("DOWN")) act = "2";
+			else if(act.equals("RIGHT")) act = "3";
+			else if(act.equals("LEFT")) act = "4";
+			else act = "5";
+			
+			act = act + stat;
+						
+			return act.hashCode();
+		}
+		
+		/**
+		 * Return an positive integer value if this node is greater than 
+		 * the node pass like argument of the method.
+		 * 
+		 * @return value 
+		 */
+		
+		@Override
 		public int compareTo(Node o) {
-			// TODO Auto-generated method stub
+			int value;
+			value = this.pathCost - o.pathCost;
 			return 0;
 		}
 

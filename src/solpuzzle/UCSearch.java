@@ -25,10 +25,6 @@ public class UCSearch {
 		ChildNode child;
 		Node newCh;
 		
-		if(problem.getGoalt().compare(initNode.getState())) {
-			return initNode;
-		}
-		
 		fronteir.add(initNode);
 		sFront.add(initNode.getState().getCurrentState());
 		while(!fronteir.isEmpty()) {
